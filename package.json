@@ -1,0 +1,17 @@
+{
+  "name": "poll",
+  "version": "1.0.0",
+  "description": "This is polling application for AngularJS Copenhagen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nima Zahedi/ Hamid Jahtalab",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.46",
+    "angularfire": "1.1.3",
+    "firebase": "2.3.1",
+    "systemjs": "0.19.5"
+  }
+}
