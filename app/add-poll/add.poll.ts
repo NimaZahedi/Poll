@@ -8,7 +8,7 @@ import {PollServices} from "../poll.services";
 })
 
 export class AddNewPoll {
-	name: string = 'hamid';
+	name: string = '';
 	polls: Poll[] = new Array();
 
 	constructor(private pollServices: PollServices) {

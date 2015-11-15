@@ -1,6 +1,7 @@
 export class PollServices {
 	private polls: Firebase;
 	private url = "https://AngularJSCPH.firebaseio.com/Polls";
+	
 	constructor() {
 		this.polls = new Firebase(this.url); 
 	}
