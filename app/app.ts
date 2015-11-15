@@ -1,5 +1,6 @@
 import {Component, bootstrap} from "angular2/angular2";
-import {AddNewPoll} from "./add-poll/add.poll"
+import {AddNewPoll} from "./add-poll/add.poll";
+import {PollServices} from './poll.services';
 
 @Component({
 	selector: 'app',
@@ -14,5 +15,5 @@ export class App {
 	}
 }
 
-bootstrap(App);
+bootstrap(App, [PollServices]);
 

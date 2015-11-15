@@ -1,0 +1,12 @@
+<h1>Add New poll</h1>
+
+Team Name
+<input [(ng-model)]="name" />
+<br />
+<button (click)="addNewPoll($event)">Add New Poll</button>
+
+<br />
+
+<ul *ng-for="#poll of polls">
+	<li> {{poll.name}} </li>
+</ul>
