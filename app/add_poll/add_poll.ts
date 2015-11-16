@@ -1,15 +1,14 @@
-import {Component, NgFor} from "angular2/angular2";
-import {PollServices} from "../poll.services";
+import {Component} from "angular2/angular2";
+import {PollServices} from "../services/poll.services";
 
 @Component({
 	selector: 'add-new-poll',
-	templateUrl: '../app/add-poll/add-new-poll.html',
-	directives: [NgFor]
+	templateUrl: '../app/add-poll/add-new-poll.html'
 })
 
 export class AddNewPoll {
 	polls: Poll[] = new Array();
-
+	
 	constructor(private pollServices: PollServices) {
 		pollServices.on((data: FirebaseDataSnapshot) => {
 			this.polls = [];
