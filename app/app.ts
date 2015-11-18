@@ -9,19 +9,21 @@ RouterLink,
 RouteConfig,
 RouterOutlet} from "angular2/router";
 
-import {AddNewPoll} from "./add-poll/add.poll";
-import {Poll} from "./poll/poll";
-import {PollServices} from "./services/poll.services";
+import { Home } from './home/home';
+import {Project} from "./project/project";
+import {AuthServices} from "./services/auth_services";
+import {ProjectServices} from "./services/project_services";
+import {UserServices} from "./services/user_services";
 
 @Component({
 	selector: 'app',
 	templateUrl: './app/app.html',
-	directives: [AddNewPoll, Poll, RouterOutlet, RouterLink]
+	directives: [Home, Project, RouterOutlet, RouterLink]
 })
 
 @RouteConfig([
-	new Route({ path: "/poll", component: Poll, name: "Poll" }),
-	new Route({ path: "/addpoll", component: AddNewPoll, name: "AddNewPoll" })
+	new Route({ path: "/project", component: Project, name: "Project" }),
+	new Route({ path: "/", component: Home, name: "Home" })
 ])
 
 export class App {
@@ -31,5 +33,5 @@ export class App {
 	}
 }
 
-bootstrap(App, [PollServices, ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);
+bootstrap(App, [AuthServices, ProjectServices, UserServices, ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);
 

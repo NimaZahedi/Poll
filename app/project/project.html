@@ -1,0 +1,5 @@
+<add-new-project></add-new-project>
+Projects
+<ul *ng-for="#project of projects">
+	<li> <a (click)="vote($event, project.name)">{{project.name}}</a> </li>
+</ul>
