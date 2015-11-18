@@ -13,14 +13,17 @@ export class AddNewProject {
 		projectServices.on((data: FirebaseDataSnapshot) => {
 			this.projects = [];
 			data.forEach((d) => {
-				this.projects.push(d.val());
+				this.projects.push({ id: d.key(), name: d.val().name });
 			});
 		});
 	}
 
-	public addNewProject(event, name) {
-		var project = { name: name };
+	public addNewProject(event, name: HTMLInputElement, description: HTMLInputElement, developers: HTMLInputElement) {
+		var project = { name: name.value, description: description.value, developers: developers.value };
 		this.projectServices.push(project);
+		name.value = '';
+		description.value = '';
+		developers.value = '';
 	}
 
 }

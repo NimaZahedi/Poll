@@ -31,7 +31,7 @@ export class AuthServices {
         this.firebaseRef.unauth();
     }
 
-    public initGoogleAuth() {
+    public initGoogleAuth(callback) {
 
         this.firebaseRef.authWithOAuthPopup("google", (error, authData) => {
             if (error) {
@@ -39,6 +39,7 @@ export class AuthServices {
             } else {
                 console.log("Authenticated successfully with payload:", authData);
                 this.authData = authData;
+                callback();
             }
         }, {
                 remember: "sessionOnly",

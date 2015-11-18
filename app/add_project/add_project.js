@@ -35,10 +35,9 @@ var AddNewProject = (function () {
             selector: 'add-new-project',
             templateUrl: '../app/add_project/add_new_project.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof project_services_1.ProjectServices !== 'undefined' && project_services_1.ProjectServices) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [project_services_1.ProjectServices])
     ], AddNewProject);
     return AddNewProject;
-    var _a;
 })();
 exports.AddNewProject = AddNewProject;
 //# sourceMappingURL=add_project.js.map

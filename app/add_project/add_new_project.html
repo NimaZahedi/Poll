@@ -1,7 +1,23 @@
-<h1>Add New Project</h1>
+<div class="row card">
+	<div class="col s12 card-content">
+		<div class="card-title">Add New Project</div>
+		<div class="input-field col s12">
+			<input #name type="text" id="project_name" />
+			<label for="project_name">Project Name</label>
+		</div>
+		<div class="input-field col s12">
+			<input #description type="text" id="project_description">
+			</textarea>
+			<label for="project_description">Project Description</label>
+		</div>
+		<div class="input-field col s12">
+			<input #developers type="text" id="project_developers">
+			</textarea>
+			<label for="project_developers">Project Developers</label>
+		</div>
+		<div class="input-field col s12">
+			<a (click)="addNewProject($event, name, description, developers)" class="waves-effect waves-light btn right">Add New Project</a>
+		</div>
 
-Team Name
-<input #name />
-
-<br />
-<button (click)="addNewProject($event, name.value)">Add New Project</button>
+	</div>
+</div>

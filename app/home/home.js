@@ -28,10 +28,9 @@ var Home = (function () {
             selector: 'home',
             templateUrl: '../app/home/home.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof auth_services_1.AuthServices !== 'undefined' && auth_services_1.AuthServices) === 'function' && _a) || Object, router_1.Router])
+        __metadata('design:paramtypes', [auth_services_1.AuthServices, router_1.Router])
     ], Home);
     return Home;
-    var _a;
 })();
 exports.Home = Home;
 //# sourceMappingURL=home.js.map

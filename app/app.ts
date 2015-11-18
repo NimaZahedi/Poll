@@ -1,6 +1,7 @@
-import {Component, bootstrap, provide} from "angular2/angular2";
+import {Component, bootstrap, provide, NgIf} from "angular2/angular2";
 
-import {ROUTER_PROVIDERS,
+import {
+ROUTER_PROVIDERS,
 Route,
 HashLocationStrategy,
 LocationStrategy,
@@ -9,7 +10,7 @@ RouterLink,
 RouteConfig,
 RouterOutlet} from "angular2/router";
 
-import { Home } from './home/home';
+import {Home} from './home/home';
 import {Project} from "./project/project";
 import {AuthServices} from "./services/auth_services";
 import {ProjectServices} from "./services/project_services";
@@ -18,7 +19,7 @@ import {UserServices} from "./services/user_services";
 @Component({
 	selector: 'app',
 	templateUrl: './app/app.html',
-	directives: [Home, Project, RouterOutlet, RouterLink]
+	directives: [Home, Project, RouterOutlet, RouterLink, NgIf]
 })
 
 @RouteConfig([
@@ -28,9 +29,14 @@ import {UserServices} from "./services/user_services";
 
 export class App {
 	message;
-	constructor() {
+	constructor(private authServices: AuthServices) {
 		this.message = "hi from app";
 	}
+	
+	public isAuthenticate() {
+		return this.authServices.isAuthenticated(); 
+	}
+	
 }
 
 bootstrap(App, [AuthServices, ProjectServices, UserServices, ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);

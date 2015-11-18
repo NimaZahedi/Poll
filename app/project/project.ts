@@ -12,18 +12,33 @@ import {UserServices} from "../services/user_services";
 export class Project {
 
 	public projects;
+	selectedProject = { projectId: '' };
 
 	constructor(private projectServices: ProjectServices, private userServices: UserServices) {
 		projectServices.on((data: FirebaseDataSnapshot) => {
 			this.projects = [];
 			data.forEach((d) => {
-				this.projects.push(d.val());
+				var p = d.val();
+				this.projects.push({
+					id: d.key(),
+					name: p.name,
+					description: p.description,
+					developers: p.developers, 
+				});
 			});
+		});
+
+		userServices.getVote((vote: FirebaseDataSnapshot) => {
+			if (vote.val())
+				this.selectedProject = vote.val();
+			else
+				this.selectedProject = { projectId: '' };
 		});
 	}
 
-	public vote(event, projectName) {
-		this.userServices.vote({ projectName: projectName });
+	public vote(event, projectId) {
+		this.userServices.vote({ projectId: projectId });
+		this.selectedProject = { projectId: projectId };
 	}
 
 }

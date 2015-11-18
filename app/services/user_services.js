@@ -33,10 +33,9 @@ var UserServices = (function () {
     };
     UserServices = __decorate([
         angular2_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof auth_services_1.AuthServices !== 'undefined' && auth_services_1.AuthServices) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [auth_services_1.AuthServices])
     ], UserServices);
     return UserServices;
-    var _a;
 })();
 exports.UserServices = UserServices;
 //# sourceMappingURL=user_services.js.map

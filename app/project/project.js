@@ -48,10 +48,9 @@ var Project = (function () {
             templateUrl: '../app/project/project.html',
             directives: [angular2_1.NgFor, add_project_1.AddNewProject]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof project_services_1.ProjectServices !== 'undefined' && project_services_1.ProjectServices) === 'function' && _a) || Object, (typeof (_b = typeof user_services_1.UserServices !== 'undefined' && user_services_1.UserServices) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [project_services_1.ProjectServices, user_services_1.UserServices])
     ], Project);
     return Project;
-    var _a, _b;
 })();
 exports.Project = Project;
 //# sourceMappingURL=project.js.map
