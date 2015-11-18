@@ -1,0 +1,15 @@
+<div *ng-for="#project of projects"  class="row card">
+	<div class="col s12 card-content valign-wrapper">
+		<div class="col s12">
+			<span class="card-title">
+				{{project.name}}
+			</span>
+			<p>
+				{{project.description}}
+			</p>
+			<p>
+				{{project.developers}}
+			</p>
+		</div>
+	</div>
+</div>

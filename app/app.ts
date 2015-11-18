@@ -12,6 +12,7 @@ RouterOutlet} from "angular2/router";
 
 import {Home} from './home/home';
 import {Project} from "./project/project";
+import {Winner} from "./winner/winner";
 import {AuthServices} from "./services/auth_services";
 import {ProjectServices} from "./services/project_services";
 import {UserServices} from "./services/user_services";
@@ -24,6 +25,7 @@ import {UserServices} from "./services/user_services";
 
 @RouteConfig([
 	new Route({ path: "/project", component: Project, name: "Project" }),
+	new Route({ path: "/winner", component: Winner, name: "Winner" }),
 	new Route({ path: "/", component: Home, name: "Home" })
 ])
 
