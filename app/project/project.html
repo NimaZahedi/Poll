@@ -1,0 +1,19 @@
+<add-new-project></add-new-project>
+<div *ng-for="#project of projects" class="row card">
+	<div (click)="vote($event, project.id)" class="col s12 card-content valign-wrapper" style="cursor: pointer">
+		<div class="col s12">
+			<span class="card-title">
+				{{project.name}}
+			</span>
+			<p>
+				{{project.description}}
+			</p>
+			<p>
+				{{project.developers}}
+			</p>
+		</div>
+		<span class="col s12 secondary-content">
+			<i class="right"><img style="width: 35px" [attr.src]="project.id === selectedProject.projectId ? 'app/images/AngularMeetUp.svg' : 'app/images/mute-AngularMeetUp.svg'" /></i>
+		</span>
+	</div>
+</div>
