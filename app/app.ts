@@ -35,6 +35,9 @@ export class App {
 		this.message = "hi from app";
 	}
 	
+	public getProfile(){
+		return this.authServices.getUserProfile();
+	}
 	public isAuthenticate() {
 		return this.authServices.isAuthenticated(); 
 	}
