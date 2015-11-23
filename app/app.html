@@ -2,13 +2,20 @@
 	<nav class="top-nav z-depth-3">
 		<div class="container">
 			<div class="nav-wrapper">
-				<a [router-link]="['/Home']" class="page-title">
-					<!--<img style="width: 35px" src="app/images/AngularMeetUp.svg" />-->
-					<span>AngularJS CPH</span>
+				<a href="http://www.meetup.com/AngularJS-Copenhagen/" class="page-title">
+					AngularJS CPH
 				</a>
-				<span *ng-if="isAuthenticate()" class="hide-on-small-only">with {{getProfile().displayName}}</span>
+				<span *ng-if="isAuthenticate()" class="hide-on-small-only">, {{getProfile().displayName}}</span>
 				<ul id="nav-mobile" class="right">
-					<li><a [router-link]="['/Project']" class="page-title" *ng-if="isAuthenticate()">Projects</a></li>
+					<li>
+						<a [router-link]="['/Home']" class="page-title" *ng-if="isAuthenticate()">Home</a>
+					</li>
+					<li>
+						<a [router-link]="['/Project']" class="page-title" *ng-if="isAuthenticate()">Projects</a>
+					</li>
+					<li>
+						<a [router-link]="['/Winner']" class="page-title" *ng-if="isAuthenticate()">Winner</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -19,12 +26,9 @@
 	<div class="container">
 		<div class="col">
 			<router-outlet></router-outlet>
-			<!--<a class="btn-floating btn-large waves-effect waves-light red right" [router-link]="['/Winner']" ><i class="material-icons">add</i></a>-->
 		</div>
 	</div>
 
 </main>
 
-<footer>
-	<!--<li><a [router-link]="['/Home']" class="page-title">Home</a></li>-->
-</footer>
+<footer></footer>

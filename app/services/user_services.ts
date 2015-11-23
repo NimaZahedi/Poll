@@ -20,11 +20,13 @@ export class UserServices {
 			var us = users.val();
 			for (var k in us) {
 				var user = us[k];
-				var id = user.vote.projectId;
-				if (id in votes)
-					votes[id]++;
-				else
-					votes[id] = 1;
+				if (user.vote) {
+					var id = user.vote.projectId;
+					if (id in votes)
+						votes[id]++;
+					else
+						votes[id] = 1;
+				}
 
 			}
 			callback(votes)
