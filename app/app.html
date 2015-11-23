@@ -2,7 +2,11 @@
 	<nav class="top-nav z-depth-3">
 		<div class="container">
 			<div class="nav-wrapper">
-				<a [router-link]="['/Home']" class="page-title">AngularJS CPH Poll</a>
+				<a [router-link]="['/Home']" class="page-title">
+					<!--<img style="width: 35px" src="app/images/AngularMeetUp.svg" />-->
+					<span>AngularJS CPH</span>
+				</a>
+				<span *ng-if="isAuthenticate()">with {{getProfile().displayName}}</span>
 				<ul id="nav-mobile" class="right">
 					<li><a [router-link]="['/Project']" class="page-title" *ng-if="isAuthenticate()">Projects</a></li>
 				</ul>
