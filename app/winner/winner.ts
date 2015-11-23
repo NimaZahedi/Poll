@@ -10,18 +10,19 @@ import {ProjectServices} from "../services/project_services"
 
 export class Winner {
 	projects;
+	maxValue;
 	constructor(private userServices: UserServices, private projectServices: ProjectServices) {
 
 		userServices.getAllVotes((votes) => {
-			var maxValue = 0;
+			this.maxValue = 0;
 			var winners = [];
 			for (var k in votes) {
-				if (votes[k] == maxValue) {
+				if (votes[k] == this.maxValue) {
 					winners.push(k);
 				}
-				if (votes[k] > maxValue) {
+				if (votes[k] > this.maxValue) {
 					winners = [k];
-					maxValue = votes[k]
+					this.maxValue = votes[k]
 				}
 			}
 			this.projects = [];
