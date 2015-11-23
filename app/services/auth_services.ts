@@ -13,7 +13,8 @@ export class AuthServices {
     public getUserProfile() {
         if (this.authData != null) {
             return {
-                displayName: this.authData.google.displayeName
+                displayName: this.authData.google.displayName,
+                email: this.authData.google.email
             };
         }
     }
@@ -38,7 +39,13 @@ export class AuthServices {
                 console.log("Login Failed!", error);
             } else {
                 console.log("Authenticated successfully with payload:", authData);
+
                 this.authData = authData;
+                var profile = new Firebase("https://AngularJSCPH.firebaseio.com/Users/" + authData.uid + '/profile');
+                profile.set({
+                    displayName: authData.google.displayName,
+                    email: authData.google.email
+                });
                 callback();
             }
         }, {
