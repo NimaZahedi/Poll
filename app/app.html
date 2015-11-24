@@ -8,13 +8,13 @@
 				<span *ng-if="isAuthenticate()" class="hide-on-small-only">, {{getProfile().displayName}}</span>
 				<ul id="nav-mobile" class="right">
 					<li>
-						<a [router-link]="['/Home']" class="page-title" *ng-if="isAuthenticate()">Home</a>
+						<a [router-link]="['/Home']" class="page-title">Home</a>
 					</li>
 					<li>
 						<a [router-link]="['/Project']" class="page-title" *ng-if="isAuthenticate()">Projects</a>
 					</li>
 					<li>
-						<a [router-link]="['/Winner']" class="page-title" *ng-if="isAuthenticate()">Winner</a>
+						<a [router-link]="['/Winner']" class="page-title">Winner</a>
 					</li>
 				</ul>
 			</div>
