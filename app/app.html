@@ -1,0 +1,34 @@
+<header>
+	<nav class="top-nav z-depth-3">
+		<div class="container">
+			<div class="nav-wrapper">
+				<a href="http://www.meetup.com/AngularJS-Copenhagen/" class="page-title">
+					AngularJS CPH
+				</a>
+				<span *ng-if="isAuthenticate()" class="hide-on-small-only">, {{getProfile().displayName}}</span>
+				<ul id="nav-mobile" class="right">
+					<li>
+						<a [router-link]="['/Home']" class="page-title">Home</a>
+					</li>
+					<li>
+						<a [router-link]="['/Project']" class="page-title" *ng-if="isAuthenticate()">Projects</a>
+					</li>
+					<li>
+						<a [router-link]="['/Winner']" class="page-title">Winner</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<main class="fill-parent" style="overflow: auto;">
+	<div class="container">
+		<div class="col">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+
+</main>
+
+<footer></footer>

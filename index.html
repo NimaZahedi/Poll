@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 
 <head>
-	<title>Poll</title>
+	<title>AngularJs CPH Poll</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="/favicon.ico?v=2" />
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"
+	media="screen,projection" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<script src="node_modules/systemjs/dist/system.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js'></script>
+
+
+	<script src="https://code.angularjs.org/tools/system.js"></script>
 
 	<script>
 		System.config({
@@ -16,19 +25,29 @@
     	});
 	</script>
 
-	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-	<script src="node_modules/angular2/bundles/router.dev.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-alpha.46/angular2.dev.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-alpha.46/router.dev.js"></script>
 	<script src="https://cdn.firebase.com/js/client/2.3.0/firebase.js"></script>
 
-
 	<script async>
-		System.import('app/app');
+		System.import('app/app')
 	</script>
-
+	<style>
+		.back-image {
+			background-image: url('app/images/nyhavn.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.fill-parent{
+			display:block;
+			height:inherit;
+		}
+	</style>
 </head>
 
-<body>
-	<app></app>
+<body style="background-color: #e8e8e8;height: inherit;" class="back-image">
+
+	<app style="display: flex;height:inherit;width: 100%;flex-direction: column;"></app>
 </body>
 
 </html>
